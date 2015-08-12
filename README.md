@@ -1,1 +1,3 @@
 # roshi
+
+ActiveModel/ActiveRecord Validationコレクション
