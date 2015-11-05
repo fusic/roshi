@@ -1,5 +1,6 @@
 # Roshi
 
+[![Gem Version](https://badge.fury.io/rb/roshi.svg)](https://badge.fury.io/rb/roshi)
 [![Build Status](https://travis-ci.org/fusic/roshi.svg)](https://travis-ci.org/fusic/roshi)
 
 ActiveModel/ActiveRecord Validation Collection For Mainly Japanese
