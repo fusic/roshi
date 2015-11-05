@@ -1,6 +1,3 @@
+require 'active_model'
 require "roshi/version"
-require "active_model/validations/email_validator"
-
-module Roshi
-  # Your code goes here...
-end
+require "roshi/active_model/validations/email_validator"
