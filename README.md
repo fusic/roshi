@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+class TestModel
+  validates :email, email: true
+end
+```
 
 ## Contributing
 
