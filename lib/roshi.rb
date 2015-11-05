@@ -1,3 +1,5 @@
 require 'active_model'
 require 'roshi/version'
-require 'roshi/active_model/validations/email_validator'
+%w(email version_number).each do |validator_name|
+  require "roshi/active_model/validations/#{validator_name}_validator"
+end
