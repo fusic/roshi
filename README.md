@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 class TestModel
   validates :email, email: true
 end
