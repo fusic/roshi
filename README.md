@@ -26,6 +26,7 @@ Or install it yourself as:
 ```ruby
 class TestModel
   validates :email, email: true
+  validates :zip_code, zip_code: true
   validates :version_number, version_number: true
 end
 ```

@@ -4,7 +4,7 @@ require 'roshi'
 class TestModel
   include ActiveModel::Validations
 
-  attr_accessor :email, :version_number
+  attr_accessor :email, :zip_code, :version_number
 
   def initialize(attrs = {})
     attrs.each_pair { |k,v| send("#{k}=", v) }
