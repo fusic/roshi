@@ -28,6 +28,7 @@ class TestModel
   validates :email, email: true
   validates :zip_code, zip_code: true # zip_code: { hiphenation: true }
   validates :phone_number, phone_number: true # phone_number: { hiphenation: true }
+  validates :date, date: true
   validates :hiragana, hiragana: true
   validates :version_number, version_number: true
 end
