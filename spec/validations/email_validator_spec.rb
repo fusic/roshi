@@ -13,7 +13,8 @@ describe 'EmailValidator' do
       'firstname+lastname@example.com',
       'email@example.name',
       'email@example.museum',
-      'email@example.co.jp'
+      'email@example.co.jp',
+      "email+!#$%&'*+-/=?^_`.{|}~@example.com"
     ].each do |email|
       it "#{email} should be valid" do
         expect(EmailModel.new(email: email)).to be_valid
