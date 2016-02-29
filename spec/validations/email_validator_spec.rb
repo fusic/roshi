@@ -14,6 +14,7 @@ describe 'EmailValidator' do
       'email@example.name',
       'email@example.museum',
       'email@example.co.jp',
+      'email@hoge.example-foo.com',
       "email+!#$%&'*+-/=?^_`.{|}~@example.com"
     ].each do |email|
       it "#{email} should be valid" do
