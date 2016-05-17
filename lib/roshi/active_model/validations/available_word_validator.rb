@@ -5,8 +5,7 @@ module ActiveModel
         accept_words = options[:accept_words] || []
         reject_words = options[:reject_words] || []
 
-        if !(accept_words.empty? || accept_words.include?(value)) ||
-          reject_words.include?(value)
+        if !(accept_words.empty? || accept_words.include?(value)) || reject_words.include?(value)
           record.errors.add(attribute, options[:message] || :reject_word)
         end
       end
