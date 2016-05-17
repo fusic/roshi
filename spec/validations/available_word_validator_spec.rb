@@ -5,7 +5,8 @@ class AcceptWordModel < TestModel
 end
 
 class RejectWordModel < TestModel
-  validates :reject_word, available_word: { reject_words: %w(reject unavailable) }
+  validates :reject_word, \
+            available_word: { reject_words: %w(reject unavailable) }
 end
 
 describe "AvailableWordValidator" do
