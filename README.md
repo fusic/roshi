@@ -31,6 +31,13 @@ class TestModel
   validates :date, date: true
   validates :hiragana, hiragana: true
   validates :version_number, version_number: true
+  validates :large_value, numerical_comparation: { compare_to: :small_value, type: :greater_than }
+  validates :large_value, numerical_comparation: { compare_to: :small_value, type: :greater_than_or_equal_to }
+  validates :large_value, numerical_comparation: { compare_to: :small_value, type: :equal_to }
+  validates :small_value, numerical_comparation: { compare_to: :large_value, type: :less_than_or_equal_to }
+  validates :small_value, numerical_comparation: { compare_to: :large_value, type: :less_than }
+  validates :middle_value, numerical_comparation: { compare_to: { min: :small_value, max: :large_value }, type: :between }
+  end
 end
 ```
 
