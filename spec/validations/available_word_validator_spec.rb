@@ -1,13 +1,11 @@
 require "spec_helper"
 
 class AcceptWordModel < TestModel
-  validates :accept_word,
-    available_word: { accept_words: %w(accept available) }
+  validates :accept_word, available_word: { accept_words: %w(accept available) }
 end
 
 class RejectWordModel < TestModel
-  validates :reject_word,
-    available_word: { reject_words: %w(reject unavailable) }
+  validates :reject_word, available_word: { reject_words: %w(reject unavailable) }
 end
 
 describe "AvailableWordValidator" do
