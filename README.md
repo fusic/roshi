@@ -31,6 +31,8 @@ class TestModel
   validates :date, date: true
   validates :hiragana, hiragana: true
   validates :version_number, version_number: true
+  validates :accept_word, available_word: {accept_words: %w(accept available)}
+  validates :reject_word, available_word: {reject_words: %w(reject unavailable)}
 end
 ```
 
