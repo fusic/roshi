@@ -17,7 +17,7 @@ module ActiveModel
         keys = options.keys
 
         # operators(>, >=, ==, <=, <) processings
-        check_valid =  proc.new do |type, op|
+        check_valid =  proc do |type, op|
           compare_to = options[type]
           compare_value = record.send(options[type])
 
@@ -62,6 +62,15 @@ module ActiveModel
           unless max_value.present? && min_value.present?
             record.errors.add(max_value_name, :blank) unless max_value.present?
             record.errors.add(min_value_name, :blank) unless min_value.present?
+            return false
+          end
+          unless max_value.is_a?(Numeric) && min_value.is_a?(Numeric)
+            unless max_value.is_a?(Numeric)
+              record.errors.add(attribute, :not_a_number)
+            end
+            unless max_value.is_a?(Numeric)
+              record.errors.add(attribute, :not_a_number)
+            end
             return false
           end
 
