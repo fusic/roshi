@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 class GreaterThanModel < TestModel
   validates :large_value, \
@@ -42,8 +42,8 @@ class BetweenModel < TestModel
             }
 end
 
-describe 'VersionNumberValidator' do
-  context 'valid greater_than' do
+describe "VersionNumberValidator" do
+  context "valid greater_than" do
     [
       { large_value: 10, small_value: 1 },
       { large_value: -5, small_value: -10 },
@@ -60,7 +60,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'invalid greater_than' do
+  context "invalid greater_than" do
     [
       { small_value: 10, large_value: 1 },
       { small_value: -5, large_value: -10 },
@@ -83,7 +83,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'valid greater_than_or_equal_to' do
+  context "valid greater_than_or_equal_to" do
     [
       { large_value: 10, small_value: 1 },
       { large_value: -5, small_value: -10 },
@@ -101,7 +101,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'invalid greater_than_or_equal_to' do
+  context "invalid greater_than_or_equal_to" do
     [
       { small_value: 10, large_value: 1 },
       { small_value: -5, large_value: -10 },
@@ -125,7 +125,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'valid equal_to' do
+  context "valid equal_to" do
     [
       { large_value: 10, small_value: 10 },
       { large_value: -5, small_value: -5 },
@@ -140,7 +140,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'invalid equal_to' do
+  context "invalid equal_to" do
     [
       { small_value: 10, large_value: 1 },
       { small_value: -5, large_value: -10 },
@@ -164,7 +164,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'valid less_than' do
+  context "valid less_than" do
     [
       { large_value: 10, small_value: 1 },
       { large_value: -5, small_value: -10 },
@@ -181,7 +181,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'invalid less_than' do
+  context "invalid less_than" do
     [
       { small_value: 10, large_value: 1 },
       { small_value: -5, large_value: -10 },
@@ -204,7 +204,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'valid less_than_or_equal_to' do
+  context "valid less_than_or_equal_to" do
     [
       { large_value: 10, small_value: 1 },
       { large_value: -5, small_value: -10 },
@@ -222,7 +222,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'invalid less_than_or_equal_to' do
+  context "invalid less_than_or_equal_to" do
     [
       { small_value: 10, large_value: 1 },
       { small_value: -5, large_value: -10 },
@@ -246,7 +246,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'valid between' do
+  context "valid between" do
     [
       { large_value: 15, small_value: 10, middle_value: 12 },
       { large_value: 20, small_value: -10, middle_value: 0 },
@@ -263,7 +263,7 @@ describe 'VersionNumberValidator' do
     end
   end
 
-  context 'invalid between' do
+  context "invalid between" do
     [
       { large_value: 15, small_value: 15, middle_value: 5 },
       { large_value: 20, small_value: 10, middle_value: 30 },
