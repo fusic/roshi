@@ -16,30 +16,6 @@ module ActiveModel
 
         keys = options.keys
 
-        # operators(>, >=, ==, <=, <) processings
-        check_valid =  proc do |type, op|
-          compare_to = options[type]
-          compare_value = record.send(options[type])
-
-          unless compare_value.present?
-            record.errors.add(compare_to, :blank)
-            return false
-          end
-          unless compare_value.is_a?(Numeric)
-            record.errors.add(attribute, :not_a_number)
-            return false
-          end
-
-          unless value.send(op, compare_value)
-            record.errors.add(
-              attribute,
-              "must_be_#{type}".to_sym,
-              min_field: record.class.human_attribute_name(compare_to)
-            )
-            return false
-          end
-        end
-
         # validate operations(>, >=, ==, <=, <)
         {
           greater_than: :>,
@@ -48,7 +24,7 @@ module ActiveModel
           less_than_or_equal_to: :<=,
           less_than: :<
         }.each do |k, v|
-          check_valid.call(k, v) if keys.include? k
+          check_valid(record, attribute, value, k, v) if keys.include? k
         end
 
         # validate between
@@ -83,6 +59,31 @@ module ActiveModel
             )
             return false
           end
+        end
+      end
+
+      private
+
+      def check_valid(record, attribute, value, type, op)
+        compare_to = options[type]
+        compare_value = record.send(options[type])
+
+        unless compare_value.present?
+          record.errors.add(compare_to, :blank)
+          return false
+        end
+        unless compare_value.is_a?(Numeric)
+          record.errors.add(attribute, :not_a_number)
+          return false
+        end
+
+        unless value.send(op, compare_value)
+          record.errors.add(
+            attribute,
+            "must_be_#{type}".to_sym,
+            min_field: record.class.human_attribute_name(compare_to)
+          )
+          return false
         end
       end
     end
