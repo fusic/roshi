@@ -5,7 +5,7 @@ class TestModel
   include ActiveModel::Validations
 
   attr_accessor :email, :zip_code, :phone_number,
-                :date, :hiragana, :version_number,
+                :date, :hiragana, :katakana, :version_number,
                 :large_value, :middle_value, :small_value,
                 :accept_word, :reject_word
 
