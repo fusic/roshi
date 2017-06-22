@@ -6,8 +6,8 @@ require 'roshi/version'
 Gem::Specification.new do |spec|
   spec.name          = 'roshi'
   spec.version       = Roshi::VERSION
-  spec.authors       = ['kawahiro311', 'Kta-M']
-  spec.email         = ['hiro.kawasaki0311@gmail.com', 'mohri1219@gmail.com']
+  spec.authors       = ['kawahiro311', 'Kta-M', 'nmbakfm']
+  spec.email         = ['hiro.kawasaki0311@gmail.com', 'mohri1219@gmail.com', 'nmbakfm@gmail.com']
 
   spec.summary       = %q{ActiveModel/ActiveRecord Validation Collection}
   spec.description   = %q{ActiveModel/ActiveRecord Validation Collection For Mainly Japanese}
