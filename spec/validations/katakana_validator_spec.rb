@@ -5,7 +5,7 @@ class KatakanaModel < TestModel
 end
 
 class KatakanaAllowSpaceModel < TestModel
-  validates :katakana, katakana: {allow_space: true}
+  validates :katakana, katakana: { allow_space: true }
 end
 
 describe 'KatakanaValidator' do
