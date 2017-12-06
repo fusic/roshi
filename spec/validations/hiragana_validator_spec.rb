@@ -13,7 +13,7 @@ describe 'HiraganaValidator' do
     [
       '',
       'ひらがな',
-      'ひらがなー',
+      'ひらがなー'
     ].each do |hiragana|
       it "#{hiragana} should be valid" do
         expect(HiraganaModel.new(hiragana: hiragana)).to be_valid
@@ -28,7 +28,7 @@ describe 'HiraganaValidator' do
       'カタカナ',
       '漢字',
       'ひらがなとカタカナ',
-      'ひら がなー',
+      'ひら がなー'
     ].each do |hiragana|
       it "#{hiragana} should be valid" do
         expect(HiraganaModel.new(hiragana: hiragana)).not_to be_valid
@@ -40,7 +40,7 @@ describe 'HiraganaValidator' do
     [
       ' ',
       ' ひら がな ',
-      'ひら　がなー',
+      'ひら　がなー'
     ].each do |hiragana|
       it "#{hiragana} should be valid" do
         expect(HiraganaAllowSpaceModel.new(hiragana: hiragana)).to be_valid

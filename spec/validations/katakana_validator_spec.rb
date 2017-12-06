@@ -13,7 +13,7 @@ describe 'KatakanaValidator' do
     [
       '',
       'カタカナ',
-      'カタカナー',
+      'カタカナー'
     ].each do |katakana|
       it "#{katakana} should be valid" do
         expect(KatakanaModel.new(katakana: katakana)).to be_valid
@@ -40,7 +40,7 @@ describe 'KatakanaValidator' do
     [
       ' ',
       ' カタ カナー ',
-      'カタ　カナー',
+      'カタ　カナー'
     ].each do |katakana|
       it "#{katakana} should be valid" do
         expect(KatakanaAllowSpaceModel.new(katakana: katakana)).to be_valid
