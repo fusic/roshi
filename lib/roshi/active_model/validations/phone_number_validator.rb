@@ -2,8 +2,8 @@ module ActiveModel
   module Validations
     class PhoneNumberValidator < EachValidator
       REGEXES = {
-        default: /\A\d{2,4}\-?\d{2,4}\-?\d{4}\z/i,
-        with_hiphenation: /\A\d{2,4}\-\d{2,4}\-\d{4}\z/i,
+        default: /\A\d{2,4}\-?\d{2,4}\-?\d{3,4}\z/i,
+        with_hiphenation: /\A\d{2,4}\-\d{2,4}\-\d{3,4}\z/i,
         without_hiphenation: /\A\d{6,12}\z/i
       }
 
