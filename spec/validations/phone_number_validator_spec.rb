@@ -21,7 +21,8 @@ describe 'PhoneNumberValidator' do
         '03-12-1234',
         '03121234',
         '090-1234-1234',
-        '09012341234'
+        '09012341234',
+        '0120-123-456'
       ].each do |phone_number|
         it "#{phone_number} should be valid" do
           expect(DefaultPhoneNumberModel.new(phone_number: phone_number)).to be_valid
@@ -52,7 +53,8 @@ describe 'PhoneNumberValidator' do
       [
         '0123-12-1234',
         '03-12-1234',
-        '090-1234-1234'
+        '090-1234-1234',
+        '0120-123-456'
       ].each do |phone_number|
         it "#{phone_number} should be valid" do
           expect(WithHiphenationPhoneNumberModel.new(phone_number: phone_number)).to be_valid
