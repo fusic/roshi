@@ -29,11 +29,11 @@ class TestModel
   validates :zip_code, zip_code: true # zip_code: { hiphenation: true }
   validates :phone_number, phone_number: true # phone_number: { hiphenation: true }
   validates :date, date: true
-  validates :hiragana, hiragana: true
-  validates :katakana, katakana: true
+  validates :hiragana, hiragana: true # hiragana: { allow_space: true }
+  validates :katakana, katakana: true # katakana: { allow_space: true }
   validates :version_number, version_number: true
-  validates :accept_word, available_word: {accept_words: %w(accept available)}
-  validates :reject_word, available_word: {reject_words: %w(reject unavailable)}
+  validates :accept_word, available_word: { accept_words: %w(accept available) }
+  validates :reject_word, available_word: { reject_words: %w(reject unavailable) }
   validates :large_value, numerical_comparison: { greater_than: :small_value }
   validates :large_value, numerical_comparison: { greater_than_or_equal_to: :small_value }
   validates :large_value, numerical_comparison: { equal_to: :small_value }
