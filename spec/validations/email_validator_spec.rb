@@ -31,7 +31,8 @@ describe 'EmailValidator' do
       'email@',
       'email.example.com',
       'email@example..com',
-      'あいうえお@example.com'
+      'あいうえお@example.com',
+      'aaa aaa@example.com'
     ].each do |email|
       it "#{email} should be invalid" do
         expect(EmailModel.new(email: email)).not_to be_valid

@@ -3,7 +3,7 @@ module ActiveModel
     class EmailValidator < EachValidator
       def validate_each(record, attribute, value)
         # http://emailregex.com
-        unless value =~ /\A([\w+!#$%&'*+\/=?^`{|}~\-].?)+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+        unless value =~ URI::MailTo::EMAIL_REGEXP
           record.errors.add(attribute, options[:message] || I18n.t('errors.messages.invalid'))
         end
       end
