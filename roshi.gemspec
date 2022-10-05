@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'activemodel'
-  spec.add_development_dependency 'bundler', "~> 1.9"
-  spec.add_development_dependency 'rake', "~> 12.3.3"
+  spec.add_development_dependency 'bundler', "~> 2.3"
+  spec.add_development_dependency 'rake', "~> 13.0.6"
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'pry'
 end
